@@ -8,6 +8,10 @@ def format_timestamp(seconds):
     seconds = int(seconds % 60)
     return f"{minutes}:{seconds:02d}"  # Formats to mm:ss
 
+@app.get("/")
+async def root():
+    return {"message": "Hello World from Harsh Porwal"}
+
 @app.get("/transcript/{video_id}")
 async def get_transcript(video_id: str):
     try:
